@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Para Manuela ❤️</title>
+
 <style>
 body {
     margin: 0;
@@ -33,9 +34,29 @@ h2 {
 }
 
 p {
-    font-size: 20px;
+    font-size: 18px;
     max-width: 400px;
     margin: auto;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background: white;
+    color: #ff4f81;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.carta {
+    display: none;
+    background: white;
+    color: #ff4f81;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 15px;
 }
 
 .corazon {
@@ -46,44 +67,45 @@ p {
 }
 
 @keyframes flotar {
-    0% {
-        transform: translateY(100vh);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-10vh);
-        opacity: 0;
-    }
-}
-
-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    background: white;
-    color: #ff4f81;
-    font-weight: bold;
-    cursor: pointer;
+    0% { transform: translateY(100vh); opacity: 1; }
+    100% { transform: translateY(-10vh); opacity: 0; }
 }
 </style>
 </head>
+
 <body>
 
 <div class="contenedor">
     <h1>Manuela 💖</h1>
     <h2>Te Amo Muchote</h2>
-    <p>
-        Desde que llegaste a mi vida todo es más bonito.
-        Gracias por existir, por tu sonrisa y por hacerme feliz.
-        Siempre quiero caminar contigo ❤️
-    </p>
-    <button onclick="alert('Siempre serás mi persona favorita 💕')">
-        Toca aquí
-    </button>
+
+    <button onclick="mostrarCarta()">Abrir mi carta 💌</button>
+
+    <div class="carta" id="carta">
+        <p>
+        Desde que llegaste a mi vida todo cambió para mejor.
+        Eres mi paz, mi alegría y mi lugar favorito.
+        Gracias por existir y por quedarte conmigo.
+        💖 Siempre quiero caminar a tu lado.
+        </p>
+
+        <button onclick="propuesta()">¿Quieres estar conmigo para siempre? 💍</button>
+    </div>
 </div>
 
+<audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
 <script>
+function mostrarCarta() {
+    document.getElementById("carta").style.display = "block";
+}
+
+function propuesta() {
+    alert("Prometo cuidarte, respetarte y amarte todos los días 💍❤️");
+}
+
 function crearCorazon() {
     const corazon = document.createElement("div");
     corazon.classList.add("corazon");
