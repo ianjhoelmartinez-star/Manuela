@@ -79,7 +79,10 @@ button {
     <h1>Manuela 💖</h1>
     <h2>Te Amo Muchote</h2>
 
-    <button onclick="mostrarCarta()">Abrir mi carta 💌</button>
+    function mostrarCarta() {
+    document.getElementById("carta").style.display = "block";
+    document.getElementById("musica").play();
+}
 
     <div class="carta" id="carta">
         <p>
