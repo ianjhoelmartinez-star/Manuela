@@ -1,0 +1,104 @@
+index.html<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para Manuela ❤️</title>
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    color: white;
+}
+
+.contenedor {
+    z-index: 2;
+}
+
+h1 {
+    font-size: 50px;
+    margin: 0;
+}
+
+h2 {
+    font-size: 35px;
+    margin: 10px 0;
+}
+
+p {
+    font-size: 20px;
+    max-width: 400px;
+    margin: auto;
+}
+
+.corazon {
+    position: absolute;
+    color: rgba(255,255,255,0.7);
+    font-size: 20px;
+    animation: flotar 6s linear infinite;
+}
+
+@keyframes flotar {
+    0% {
+        transform: translateY(100vh);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background: white;
+    color: #ff4f81;
+    font-weight: bold;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="contenedor">
+    <h1>Manuela 💖</h1>
+    <h2>Te Amo Muchote</h2>
+    <p>
+        Desde que llegaste a mi vida todo es más bonito.
+        Gracias por existir, por tu sonrisa y por hacerme feliz.
+        Siempre quiero caminar contigo ❤️
+    </p>
+    <button onclick="alert('Siempre serás mi persona favorita 💕')">
+        Toca aquí
+    </button>
+</div>
+
+<script>
+function crearCorazon() {
+    const corazon = document.createElement("div");
+    corazon.classList.add("corazon");
+    corazon.innerHTML = "💗";
+    corazon.style.left = Math.random() * 100 + "vw";
+    corazon.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    document.body.appendChild(corazon);
+
+    setTimeout(() => {
+        corazon.remove();
+    }, 6000);
+}
+
+setInterval(crearCorazon, 300);
+</script>
+
+</body>
+</html>
